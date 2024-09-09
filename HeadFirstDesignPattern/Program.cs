@@ -70,7 +70,6 @@ Beverage beverage = new Espresso();
 Console.WriteLine(beverage.GetDescription() +" $"+ beverage.Cost());
 
 Beverage beverage1 = new DarkRoast();
-//Wrapping DarkRoast with Mocha
 beverage1 = new Mocha(beverage1);  //Wrapping DarkRoast with Mocha
 beverage1 = new Mocha(beverage1);  // onother one
 beverage1 = new Whip(beverage1);   //Wrapping DarkRoast with Whip

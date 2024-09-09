@@ -8,6 +8,7 @@
         }
         public override string GetDescription()
         {
+            Console.WriteLine("Whip");
             return Beverage.GetDescription() + ", Whip";
         }
         public override double Cost()

@@ -12,6 +12,7 @@
         }
         public override string GetDescription()
         {
+            Console.WriteLine("Mocha");
             return Beverage.GetDescription()+", Mocha";
         }
         public override double Cost()
