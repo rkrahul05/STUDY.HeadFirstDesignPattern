@@ -4,6 +4,9 @@ using HeadFirstDesignPattern.IntroToDesignPattern.ActionAdventureGame.Concrete;
 using HeadFirstDesignPattern.IntroToDesignPattern.Duck;
 using HeadFirstDesignPattern.IntroToDesignPattern.Duck.Concrete;
 using HeadFirstDesignPattern.IntroToDesignPattern.Duck.Interface;
+using HeadFirstDesignPattern.TheDecoratorPattern;
+using HeadFirstDesignPattern.TheDecoratorPattern.Beverages;
+using HeadFirstDesignPattern.TheDecoratorPattern.ConcreteCondimentDecorator;
 using HeadFirstDesignPattern.TheObserverPattern;
 using HeadFirstDesignPattern.TheObserverPattern.Display;
 
@@ -40,6 +43,7 @@ queen.Fight();
 
 #endregion Game*/
 
+/* Observer pattern
 #region Weather-O-Rama
 WeatherData weatherData = new WeatherData();
 CurrentConditionDisplay currentConditionDisplay = new CurrentConditionDisplay(weatherData);
@@ -58,3 +62,17 @@ heatIndexDisplay.Unsubscribe();
 weatherData.SetMeasurements(100, 100, 37.4f);
 heatIndexDisplay.Display();
 #endregion Weather-O-Rama
+*/
+
+#region Decorator Pattern
+
+Beverage beverage = new Espresso();
+Console.WriteLine(beverage.GetDescription() +" $"+ beverage.Cost());
+
+Beverage beverage1 = new DarkRoast();
+//Wrapping DarkRoast with Mocha
+beverage1 = new Mocha(beverage1);  //Wrapping DarkRoast with Mocha
+beverage1 = new Mocha(beverage1);  // onother one
+beverage1 = new Whip(beverage1);   //Wrapping DarkRoast with Whip
+Console.WriteLine(beverage1.GetDescription() + " $" + beverage1.Cost());   //Print the description and cost
+#endregion Decorator Pattern
