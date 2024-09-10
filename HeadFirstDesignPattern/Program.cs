@@ -7,6 +7,8 @@ using HeadFirstDesignPattern.IntroToDesignPattern.Duck.Interface;
 using HeadFirstDesignPattern.TheDecoratorPattern;
 using HeadFirstDesignPattern.TheDecoratorPattern.Beverages;
 using HeadFirstDesignPattern.TheDecoratorPattern.ConcreteCondimentDecorator;
+using HeadFirstDesignPattern.TheFactoryPattern;
+using HeadFirstDesignPattern.TheFactoryPattern.ConcretePizzaStore;
 using HeadFirstDesignPattern.TheObserverPattern;
 using HeadFirstDesignPattern.TheObserverPattern.Display;
 
@@ -64,6 +66,7 @@ heatIndexDisplay.Display();
 #endregion Weather-O-Rama
 */
 
+/* Decorator Pattern
 #region Decorator Pattern
 
 Beverage beverage = new Espresso();
@@ -75,3 +78,8 @@ beverage1 = new Mocha(beverage1);  // onother one
 beverage1 = new Whip(beverage1);   //Wrapping DarkRoast with Whip
 Console.WriteLine(beverage1.GetDescription() + " $" + beverage1.Cost());   //Print the description and cost
 #endregion Decorator Pattern
+*/
+
+PizzaStore nyStore = new NYStylePizzaStore();
+Pizza pizza = nyStore.OrderPizza("Cheese");
+Console.WriteLine("I have ordered a " + pizza.GetName());
