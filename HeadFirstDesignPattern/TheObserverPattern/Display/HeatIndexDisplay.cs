@@ -25,11 +25,11 @@ namespace HeadFirstDesignPattern.TheObserverPattern.Display
             Console.WriteLine("Heat Index is {0}",heatIndex);
         }
 
-        public void Update(float temp, float humidity, float pressure)
+        public void Update()
         {
-            this.temperature = temp;
-            this.humidity = humidity;
-            this.pressure = pressure;
+            temperature = weatherData.GetTemprature();
+            humidity = weatherData.GetHumidity() ;
+            pressure = weatherData.GetPressure();
             heatIndex = computeHeatIndex(this.temperature, this.humidity);
             Display();
         }

@@ -16,7 +16,7 @@ namespace HeadFirstDesignPattern.TheObserverPattern
         {
             foreach (Observer observer in observers)
             {
-                observer.Update(temperature, humidity, pressure);
+                observer.Update();
             }
         }
 
@@ -41,6 +41,19 @@ namespace HeadFirstDesignPattern.TheObserverPattern
             this.pressure = pressure;
             this.humidity = humidity;
             MeasurementsChanged();
+        }
+        public float GetTemprature() 
+        { 
+            return temperature;
+        }
+        public float GetPressure()
+        {
+            return pressure;
+        }
+
+        public float GetHumidity()
+        {
+            return humidity;
         }
     }
 }

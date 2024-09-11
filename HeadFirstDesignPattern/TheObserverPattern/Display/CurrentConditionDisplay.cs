@@ -24,10 +24,10 @@ namespace HeadFirstDesignPattern.TheObserverPattern.Display
             Console.WriteLine("Current conditions: {0}F degrees and {1}% humidity",temperature,humidity);
         }
 
-        public void Update(float temp, float humidity, float pressure)
+        public void Update()
         {
-            this.temperature = temp;
-            this.humidity = humidity;
+            this.temperature = weatherData.GetTemprature();
+            this.humidity = weatherData.GetHumidity();
             Display();
         }
     }

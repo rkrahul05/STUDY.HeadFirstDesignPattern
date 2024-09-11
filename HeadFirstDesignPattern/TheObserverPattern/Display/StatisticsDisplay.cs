@@ -24,11 +24,11 @@ namespace HeadFirstDesignPattern.TheObserverPattern.Display
             Console.WriteLine("Statistics conditions: {0}F degrees, {1}% humidity and pressure {2}bar",temperature,humidity,pressure);
         }
 
-        public void Update(float temp, float humidity, float pressure)
+        public void Update()
         {
-            this.temperature = temp;
-            this.humidity = humidity;
-            this.pressure = pressure;
+            temperature = weatherData.GetTemprature();
+            humidity = weatherData.GetHumidity();
+            pressure = weatherData.GetPressure();
             Display();
         }
     }
