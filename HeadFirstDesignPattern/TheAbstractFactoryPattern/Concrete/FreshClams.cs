@@ -2,7 +2,7 @@
 
 namespace HeadFirstDesignPattern.TheAbstractFactoryPattern.Concrete
 {
-    internal class FreshClams : IClam
+    public class FreshClams : IClam
     {
         public FreshClams()
         {

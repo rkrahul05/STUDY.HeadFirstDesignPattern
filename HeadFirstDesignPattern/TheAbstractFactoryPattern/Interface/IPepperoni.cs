@@ -1,6 +1,6 @@
 ﻿namespace HeadFirstDesignPattern.TheAbstractFactoryPattern.Interface
 {
-    internal interface IPepperoni
+    public interface IPepperoni
     {
     }
 }

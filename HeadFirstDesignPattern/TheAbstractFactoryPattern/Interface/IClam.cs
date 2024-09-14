@@ -1,6 +1,6 @@
 ﻿namespace HeadFirstDesignPattern.TheAbstractFactoryPattern.Interface
 {
-    internal class IClam
+    public class IClam
     {
     }
 }

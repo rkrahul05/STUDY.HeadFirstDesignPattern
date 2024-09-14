@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeadFirstDesignPattern.TheAbstractFactoryPattern.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,21 +7,20 @@ using System.Threading.Tasks;
 
 namespace HeadFirstDesignPattern.TheFactoryPattern
 {
+    //Modifying the below one for supporting the Abstract factory
     public abstract class Pizza
     {
         public string Name { get; set; }
-        public string Dough { get; set; }
-        public string  Sauce { get; set; }
+        public IDough Dough { get; set; }
+        public ISauce  Sauce { get; set; }
+        public List<IVeggies> Veggies { get; set; }
+        public ICheese Cheese { get; set; }
+        public IPepperoni Pepperoni { get; set; }
+        public IClam Clam { get; set; }
+
         public List<string> Topping { get; set; } = new List<string>();
 
-        public void Prepare()
-        {
-            Console.WriteLine("Preparing " + Name);
-            Console.WriteLine("Tossing dough....");
-            Console.WriteLine("Adding sauce");
-            Console.WriteLine("Adding toppings: ");
-            foreach(var item in Topping) Console.WriteLine(" "+item);
-        }
+        public abstract void Prepare();
         //The abstract class provides some basic defaults for baking, cutting, and boxing.
         public void Bake()
         {

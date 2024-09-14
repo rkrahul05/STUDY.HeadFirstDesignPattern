@@ -2,7 +2,7 @@
 
 namespace HeadFirstDesignPattern.TheAbstractFactoryPattern.Concrete
 {
-    internal class SlicedPepperoni : IPepperoni
+    public class SlicedPepperoni : IPepperoni
     {
         public SlicedPepperoni()
         {
