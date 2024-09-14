@@ -2,7 +2,7 @@
 
 namespace HeadFirstDesignPattern.TheAbstractFactoryPattern.Concrete
 {
-    internal class MarinaraSauce : ISauce
+    public class MarinaraSauce : ISauce
     {
         public MarinaraSauce()
         {

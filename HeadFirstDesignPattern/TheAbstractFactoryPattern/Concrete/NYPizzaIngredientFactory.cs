@@ -6,32 +6,37 @@ namespace HeadFirstDesignPattern.TheAbstractFactoryPattern.Concrete
     {
         public ICheese CreateCheese()
         {
-            throw new NotImplementedException();
+            return new ReggianoCheese();
         }
 
         public IClam CreateClam()
         {
-            throw new NotImplementedException();
+            return new FreshClams();
         }
 
         public IDough CreateDough()
         {
-            throw new NotImplementedException();
+            return new ThinCrustDough();
         }
 
         public IPepperoni CreatePepperoni()
         {
-            throw new NotImplementedException();
+            return new SlicedPepperoni();
         }
 
         public ISauce CreateSauce()
         {
-            throw new NotImplementedException();
+            return new MarinaraSauce();
         }
 
         public List<IVeggies> CreateVeggies()
         {
-            throw new NotImplementedException();
+            return new List<IVeggies>
+            {
+                new Garlic(),
+                new Onion(),
+                new Mushroom(),
+            };
         }
     }
 }

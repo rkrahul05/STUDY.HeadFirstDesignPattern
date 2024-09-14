@@ -1,6 +1,6 @@
 ﻿namespace HeadFirstDesignPattern.TheAbstractFactoryPattern.Interface
 {
-    internal interface IPizzaIngredientFactory
+    public interface IPizzaIngredientFactory
     {
         public IDough CreateDough();
         public ISauce CreateSauce();

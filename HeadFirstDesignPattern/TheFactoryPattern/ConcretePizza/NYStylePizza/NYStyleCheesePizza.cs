@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeadFirstDesignPattern.TheAbstractFactoryPattern.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,19 @@ namespace HeadFirstDesignPattern.TheFactoryPattern.ConcretePizza.NYStylePizza
 {
     public class NYStyleCheesePizza : Pizza
     {
-        public NYStyleCheesePizza()
+        private readonly IPizzaIngredientFactory _ingredientFactory;
+        public NYStyleCheesePizza(IPizzaIngredientFactory ingredientFactory)
         {
-            Name = "NY Style Sauce Cheese Pizza";
-            Dough = "Thin Crust Dough";
-            Sauce = "Marinara Sauce";
-            Topping.Add("Grated Reggiano Cheese");
+            _ingredientFactory = ingredientFactory;
+            Name = "NY Style Cheese Pizza";
+        }
+
+        public override void Prepare()
+        {
+           Console.WriteLine("Preparing "+ Name);
+            Dough = _ingredientFactory.CreateDough();
+            Sauce = _ingredientFactory.CreateSauce();
+            Cheese = _ingredientFactory.CreateCheese();
         }
     }
 }

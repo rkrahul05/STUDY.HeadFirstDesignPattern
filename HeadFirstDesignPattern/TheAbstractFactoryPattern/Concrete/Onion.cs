@@ -2,11 +2,11 @@
 
 namespace HeadFirstDesignPattern.TheAbstractFactoryPattern.Concrete
 {
-    public class ReggianoCheese : ICheese
+    public class Onion : IVeggies
     {
-        public ReggianoCheese()
+        public Onion()
         {
-            Console.WriteLine("Reggiano Cheese");
+            Console.WriteLine("Onion");
         }
     }
 }
