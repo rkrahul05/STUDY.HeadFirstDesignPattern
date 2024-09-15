@@ -11,6 +11,7 @@ using HeadFirstDesignPattern.TheFactoryPattern;
 using HeadFirstDesignPattern.TheFactoryPattern.ConcretePizzaStore;
 using HeadFirstDesignPattern.TheObserverPattern;
 using HeadFirstDesignPattern.TheObserverPattern.Display;
+using HeadFirstDesignPattern.TheSingletonPattern.ChocolateFactory;
 using HeadFirstDesignPattern.TheSingletonPattern.ClassicSingleton;
 
 
@@ -91,7 +92,16 @@ Console.WriteLine("I have ordered a " + pizza.GetName());
 */
 
 #region Singleton pattern
-var singletonInstance =  Singleton.GetInstance();
-singletonInstance.SayHello();
+//var singletonInstance =  Singleton.GetInstance();
+//singletonInstance.SayHello();
 
+//Creating first instance of boiler
+var boilerInstance1 = ChocolateBoiler.GetChocolateBoiler();
+Console.WriteLine(boilerInstance1.IsEmpty());
+boilerInstance1.Fill();  //Filling the boiler with mixture
+Console.WriteLine(boilerInstance1.IsEmpty());
+
+//Now creating another instace of the boiler and checking is empty, If the instance is same the it should be already filled with mixture
+var boilerInstance2 = ChocolateBoiler.GetChocolateBoiler();
+Console.WriteLine(boilerInstance2.IsEmpty());
 #endregion Singleton pattern
