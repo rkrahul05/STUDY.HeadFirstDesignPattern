@@ -11,6 +11,7 @@ using HeadFirstDesignPattern.TheFactoryPattern;
 using HeadFirstDesignPattern.TheFactoryPattern.ConcretePizzaStore;
 using HeadFirstDesignPattern.TheObserverPattern;
 using HeadFirstDesignPattern.TheObserverPattern.Display;
+using HeadFirstDesignPattern.TheSingletonPattern.ClassicSingleton;
 
 
 /* Duck simulation
@@ -80,6 +81,17 @@ Console.WriteLine(beverage1.GetDescription() + " $" + beverage1.Cost());   //Pri
 #endregion Decorator Pattern
 */
 
+/* Factory pattern
+#region Factory pattern
 PizzaStore nyStore = new NYStylePizzaStore();
 Pizza pizza = nyStore.OrderPizza("Cheese");
 Console.WriteLine("I have ordered a " + pizza.GetName());
+
+#endregion Factory pattern
+*/
+
+#region Singleton pattern
+var singletonInstance =  Singleton.GetInstance();
+singletonInstance.SayHello();
+
+#endregion Singleton pattern
