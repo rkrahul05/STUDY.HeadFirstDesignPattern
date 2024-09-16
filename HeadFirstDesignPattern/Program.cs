@@ -4,6 +4,9 @@ using HeadFirstDesignPattern.IntroToDesignPattern.ActionAdventureGame.Concrete;
 using HeadFirstDesignPattern.IntroToDesignPattern.Duck;
 using HeadFirstDesignPattern.IntroToDesignPattern.Duck.Concrete;
 using HeadFirstDesignPattern.IntroToDesignPattern.Duck.Interface;
+using HeadFirstDesignPattern.TheCommandPattern;
+using HeadFirstDesignPattern.TheCommandPattern.Command;
+using HeadFirstDesignPattern.TheCommandPattern.VendorClasses;
 using HeadFirstDesignPattern.TheDecoratorPattern;
 using HeadFirstDesignPattern.TheDecoratorPattern.Beverages;
 using HeadFirstDesignPattern.TheDecoratorPattern.ConcreteCondimentDecorator;
@@ -91,6 +94,8 @@ Console.WriteLine("I have ordered a " + pizza.GetName());
 #endregion Factory pattern
 */
 
+
+/*Singleton pattern
 #region Singleton pattern
 //var singletonInstance =  Singleton.GetInstance();
 //singletonInstance.SayHello();
@@ -105,3 +110,17 @@ Console.WriteLine(boilerInstance1.IsEmpty());
 var boilerInstance2 = ChocolateBoiler.GetChocolateBoiler();
 Console.WriteLine(boilerInstance2.IsEmpty());
 #endregion Singleton pattern
+*/
+
+
+
+SimpleRemoteControl remote = new SimpleRemoteControl();
+Light light = new Light();
+GarageDoor garageDoor = new GarageDoor();
+LightOnCommand lightOn = new LightOnCommand(light);
+GarageDoorOpenCommand garageDoorOpen = new GarageDoorOpenCommand(garageDoor);
+
+remote.SetCommand(lightOn);
+remote.ButtonWasPressed();
+remote.SetCommand(garageDoorOpen);
+remote.ButtonWasPressed();
