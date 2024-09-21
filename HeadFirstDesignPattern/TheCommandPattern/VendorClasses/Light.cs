@@ -11,7 +11,7 @@
         {
             Console.WriteLine("{0} Light is ON", NameOfLight);
         }
-        public void Off() 
+        public void Off()
         {
             Console.WriteLine("{0} Light is OFF", NameOfLight);
 

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HeadFirstDesignPattern.TheCommandPattern.VendorClasses
+﻿namespace HeadFirstDesignPattern.TheCommandPattern.VendorClasses
 {
     public class Sprinkler
     {
@@ -12,8 +6,8 @@ namespace HeadFirstDesignPattern.TheCommandPattern.VendorClasses
         {
             Console.WriteLine("Watering grass");
         }
-        public void WaterOff() 
-        { 
+        public void WaterOff()
+        {
             Console.WriteLine("Sprinkler Off");
         }
     }

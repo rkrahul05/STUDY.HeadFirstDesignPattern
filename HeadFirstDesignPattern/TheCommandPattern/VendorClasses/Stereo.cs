@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HeadFirstDesignPattern.TheCommandPattern.VendorClasses
+﻿namespace HeadFirstDesignPattern.TheCommandPattern.VendorClasses
 {
     public class Stereo
     {
@@ -16,7 +10,7 @@ namespace HeadFirstDesignPattern.TheCommandPattern.VendorClasses
         public double Volume { get; set; }
         public void On()
         {
-            Console.WriteLine("{0} Stereo is On",PlaceOfStereo);
+            Console.WriteLine("{0} Stereo is On", PlaceOfStereo);
         }
         public void SetCD()
         {
@@ -29,7 +23,7 @@ namespace HeadFirstDesignPattern.TheCommandPattern.VendorClasses
         }
         public void Off()
         {
-            Console.WriteLine("{0} Stereo is Off",PlaceOfStereo);
+            Console.WriteLine("{0} Stereo is Off", PlaceOfStereo);
         }
     }
 }

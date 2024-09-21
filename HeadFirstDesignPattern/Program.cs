@@ -152,6 +152,8 @@ remoteControl.SetCommand(1,kitchenLightOnCommand,kitchenLightOffCommand);
 remoteControl.SetCommand(2,ceilingFanOncommand,ceilingFanOffcommand);
 remoteControl.SetCommand(3,stereoOnWithCDCommand,stereoOffCommand);
 
+Console.WriteLine(remoteControl);
+
 remoteControl.OnButtonWasPressed(0);
 remoteControl.OffButtonWasPressed(0);
 remoteControl.OnButtonWasPressed(1);

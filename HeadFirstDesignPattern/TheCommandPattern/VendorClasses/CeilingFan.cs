@@ -9,11 +9,11 @@
         }
         public void On()
         {
-            Console.WriteLine("{0} Ceiling fan is On",PlaceOfCeilingFan);
+            Console.WriteLine("{0} Ceiling fan is On", PlaceOfCeilingFan);
         }
         public void Off()
         {
-            Console.WriteLine("{0} Ceiling fan is Off",PlaceOfCeilingFan);
+            Console.WriteLine("{0} Ceiling fan is Off", PlaceOfCeilingFan);
         }
     }
 }
