@@ -2,13 +2,18 @@
 {
     public class Light
     {
+        public string NameOfLight { get; set; }
+        public Light(string name)
+        {
+            NameOfLight = name;
+        }
         public void On()
         {
-            Console.WriteLine("Light is ON");
+            Console.WriteLine("{0} Light is ON", NameOfLight);
         }
         public void Off() 
         {
-            Console.WriteLine("Light is OFF");
+            Console.WriteLine("{0} Light is OFF", NameOfLight);
 
         }
     }

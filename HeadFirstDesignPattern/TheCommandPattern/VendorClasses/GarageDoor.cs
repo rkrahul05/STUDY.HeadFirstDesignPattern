@@ -2,6 +2,11 @@
 {
     public class GarageDoor
     {
+        public string NameOfPlace { get; set; }
+        public GarageDoor(string name)
+        {
+            NameOfPlace = name;
+        }
         public void Up()
         {
             Console.WriteLine("Garage Door is Open");

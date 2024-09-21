@@ -114,13 +114,51 @@ Console.WriteLine(boilerInstance2.IsEmpty());
 
 
 
-SimpleRemoteControl remote = new SimpleRemoteControl();
-Light light = new Light();
-GarageDoor garageDoor = new GarageDoor();
-LightOnCommand lightOn = new LightOnCommand(light);
-GarageDoorOpenCommand garageDoorOpen = new GarageDoorOpenCommand(garageDoor);
+//SimpleRemoteControl remote = new SimpleRemoteControl();
+//Light light = new Light("Any ligh");
+//GarageDoor garageDoor = new GarageDoor("Garage");
+//LightOnCommand lightOn = new LightOnCommand(light);
+//GarageDoorOpenCommand garageDoorOpen = new GarageDoorOpenCommand(garageDoor);
 
-remote.SetCommand(lightOn);
-remote.ButtonWasPressed();
-remote.SetCommand(garageDoorOpen);
-remote.ButtonWasPressed();
+//remote.SetCommand(lightOn);
+//remote.ButtonWasPressed();
+//remote.SetCommand(garageDoorOpen);
+//remote.ButtonWasPressed();
+
+//Implementing the complete remote
+//Devices
+RemoteControl remoteControl = new RemoteControl();
+Light livingRoomLight = new Light("Living room light");
+Light kitchenLight = new Light("Kitechen light");
+CeilingFan ceilingFan = new CeilingFan("Living room");
+GarageDoor garageDoor1 = new GarageDoor("Garage");
+Stereo stereo = new Stereo("Living room");
+
+//Commands
+LightOnCommand livingRoomLightOnCommand = new LightOnCommand(livingRoomLight);
+LightOffCommand livingRoomLightOffCommand = new LightOffCommand(livingRoomLight);
+LightOnCommand kitchenLightOnCommand = new LightOnCommand(kitchenLight);
+LightOffCommand kitchenLightOffCommand = new LightOffCommand(kitchenLight);
+
+CeilingFanOnCommand ceilingFanOncommand = new CeilingFanOnCommand(ceilingFan);
+CeilingFanOffCommand ceilingFanOffcommand = new CeilingFanOffCommand(ceilingFan);
+
+StereoOnWithCDCommand stereoOnWithCDCommand = new StereoOnWithCDCommand(stereo);
+StereoOffCommand stereoOffCommand = new StereoOffCommand(stereo);
+
+//Setting all the command to button
+remoteControl.SetCommand(0,livingRoomLightOnCommand,livingRoomLightOffCommand);
+remoteControl.SetCommand(1,kitchenLightOnCommand,kitchenLightOffCommand);
+remoteControl.SetCommand(2,ceilingFanOncommand,ceilingFanOffcommand);
+remoteControl.SetCommand(3,stereoOnWithCDCommand,stereoOffCommand);
+
+remoteControl.OnButtonWasPressed(0);
+remoteControl.OffButtonWasPressed(0);
+remoteControl.OnButtonWasPressed(1);
+remoteControl.OffButtonWasPressed(1);
+remoteControl.OnButtonWasPressed(2);
+remoteControl.OffButtonWasPressed(2);
+remoteControl.OnButtonWasPressed(3);
+remoteControl.OffButtonWasPressed(3);
+
+
