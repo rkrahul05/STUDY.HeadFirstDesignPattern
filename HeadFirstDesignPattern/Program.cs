@@ -1,9 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using HeadFirstDesignPattern;
 using HeadFirstDesignPattern.IntroToDesignPattern.ActionAdventureGame;
 using HeadFirstDesignPattern.IntroToDesignPattern.ActionAdventureGame.Concrete;
 using HeadFirstDesignPattern.IntroToDesignPattern.Duck;
 using HeadFirstDesignPattern.IntroToDesignPattern.Duck.Concrete;
 using HeadFirstDesignPattern.IntroToDesignPattern.Duck.Interface;
+using HeadFirstDesignPattern.TheAdapterPattern;
+using HeadFirstDesignPattern.TheAdapterPattern.Concrete;
+using HeadFirstDesignPattern.TheAdapterPattern.Interface;
 using HeadFirstDesignPattern.TheCommandPattern;
 using HeadFirstDesignPattern.TheCommandPattern.Command;
 using HeadFirstDesignPattern.TheCommandPattern.VendorClasses;
@@ -112,8 +116,8 @@ Console.WriteLine(boilerInstance2.IsEmpty());
 #endregion Singleton pattern
 */
 
-
-
+/* Command Pattern
+#region Command Pattern
 //SimpleRemoteControl remote = new SimpleRemoteControl();
 //Light light = new Light("Any ligh");
 //GarageDoor garageDoor = new GarageDoor("Garage");
@@ -163,4 +167,27 @@ remoteControl.OffButtonWasPressed(2);
 remoteControl.OnButtonWasPressed(3);
 remoteControl.OffButtonWasPressed(3);
 
+#endregion Command Pattern
+*/
 
+#region Adapter Pattern
+IDuck duck = new HeadFirstDesignPattern.TheAdapterPattern.Concrete.MallardDuck();
+ITurkey turkey = new WildTurkey();
+
+IDuck turkeyAdapter = new TurkeyAdapter(turkey);
+
+Console.WriteLine("The Turkey says.......");
+turkey.Gobble();
+turkey.Fly();
+
+Console.WriteLine("The Duck says.......");
+CommanStaticClass.TestDuck(duck);
+
+Console.WriteLine("The TurkeyAdapter says.......");
+CommanStaticClass.TestDuck(turkeyAdapter);
+
+
+
+
+
+#endregion Adapter Pattern
